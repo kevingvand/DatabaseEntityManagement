@@ -146,6 +146,7 @@
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\API\ApplicationInfoController.cs" />
+    <Compile Include="Controllers\API\PersonsController.cs" />
     <Compile Include="Controllers\Web\HomeController.cs" />
     <Compile Include="Controllers\Web\SwaggerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -175,6 +176,14 @@
     <ProjectReference Include="..\DatabaseEntityManagement.Common\DatabaseEntityManagement.Common.csproj">
       <Project>{E37D7793-5837-45F1-A0C3-AF19991D1B9C}</Project>
       <Name>DatabaseEntityManagement.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseEntityManagement.Data\DatabaseEntityManagement.Data.csproj">
+      <Project>{A1720BA7-5F61-43D0-BF47-88FB5D5079A5}</Project>
+      <Name>DatabaseEntityManagement.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseEntityManagement.Services\DatabaseEntityManagement.Services.csproj">
+      <Project>{9AC3740A-808C-43AA-8E10-9E7F8BA18534}</Project>
+      <Name>DatabaseEntityManagement.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

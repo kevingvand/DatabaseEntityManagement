@@ -51,12 +51,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Context\DatabaseEntityManagementContext.cs" />
+    <Compile Include="Context\QueryContext\Collection\IQueryContextCollection.cs" />
+    <Compile Include="Context\QueryContext\Collection\QueryContextCollection.cs" />
+    <Compile Include="Context\QueryContext\Scope\IQueryContextScope.cs" />
+    <Compile Include="Context\QueryContext\Scope\QueryContextScope.cs" />
+    <Compile Include="Context\QueryContext\Scope\EQueryScopeJoinMethod.cs" />
+    <Compile Include="Context\QueryContext\Service\IQueryContextService.cs" />
+    <Compile Include="Context\QueryContext\Service\QueryContextService.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\_Base\BaseEntity.cs" />
+    <Compile Include="Migrations\202211131826305_Base.cs" />
+    <Compile Include="Migrations\202211131826305_Base.designer.cs">
+      <DependentUpon>202211131826305_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Person\IPersonRepository.cs" />
+    <Compile Include="Repositories\Person\PersonRepository.cs" />
+    <Compile Include="Repositories\_Base\BaseRepository.cs" />
+    <Compile Include="Repositories\_Base\EEntityState.cs" />
+    <Compile Include="Repositories\_Base\IBaseRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202211131826305_Base.resx">
+      <DependentUpon>202211131826305_Base.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

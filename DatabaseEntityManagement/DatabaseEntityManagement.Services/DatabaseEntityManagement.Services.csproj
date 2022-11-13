@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Person\IPersonService.cs" />
+    <Compile Include="Person\PersonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseEntityManagement.Data\DatabaseEntityManagement.Data.csproj">
+      <Project>{a1720ba7-5f61-43d0-bf47-88fb5d5079a5}</Project>
+      <Name>DatabaseEntityManagement.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

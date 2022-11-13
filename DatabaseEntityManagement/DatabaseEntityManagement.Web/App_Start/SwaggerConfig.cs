@@ -185,6 +185,8 @@ namespace DatabaseEntityManagement.Web
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
+
+                        c.IgnoreObsoleteActions();
                     })
                 .EnableSwaggerUi(c =>
                     {

@@ -1,3 +1,7 @@
+using DatabaseEntityManagement.Data.Context;
+using DatabaseEntityManagement.Data.Context.QueryContext.Service;
+using DatabaseEntityManagement.Data.Repositories.Person;
+using DatabaseEntityManagement.Services.Person;
 using System;
 
 using Unity;
@@ -36,12 +40,19 @@ namespace DatabaseEntityManagement.Web
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            // NOTE: To load from web.config uncomment the line below.
-            // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
+            // Instances
+            container.RegisterInstance(typeof(DatabaseEntityManagementContext), new DatabaseEntityManagementContext());
+            container.RegisterInstance(typeof(IUnityContainer), container);
 
-            // TODO: Register your type's mappings here.
-            // container.RegisterType<IProductRepository, ProductRepository>();
+            // Data Services
+            container.RegisterType<IQueryContextService, QueryContextService>();
+
+            // Repositories
+            container.RegisterType<IPersonRepository, PersonRepository>();
+
+            // Services
+            container.RegisterType<IPersonService, PersonService>();
+
         }
     }
 }
